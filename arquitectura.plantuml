@@ -1,4 +1,4 @@
-@startuml
+@startuml Ecommerce
 
 package "Plataforma de Comercio Electrónico" {
 
