@@ -1,37 +1,34 @@
 const mongoose = require('mongoose');
-const loanSchema = new mongoose.Schema({
-  code:{
+const ventaSchema = new mongoose.Schema({
+  idProducto: {
     type: String,
     required: true
   },
-    persontype:{
-      type: String,
-      required: true
-    },
-    identitynumber: {
-        type: String,
-        required: true
-      },
-    debtor: {
-        type: String,
-        required: true
-      },
-    money:{
-      type: Number,
-      required:true,
-    },
-    expire:{
-      type: Date,
-      required:true,
-    },
-    status:{
-      type: String,
-      required:true,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now
-    }
+  username: {
+    type: String,
+    required: true
+  },
+  cantidad: {
+    type: Number,
+    required: true
+  },
+  precio: {
+    type: Number,
+    required: true
+  },
+  total: {
+    type: Number,
+    required: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
   });
 
-  module.exports = {loanSchema}
+  ventaSchema.pre('save', function(next) {
+    this.total = this.cantidad * this.precio;
+    next();
+  });
+
+  module.exports = {ventaSchema}
