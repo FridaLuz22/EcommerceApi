@@ -1,6 +1,6 @@
 const express = require("express")
 const personService = require("./services/personService");
-const uri = 'mongodb+srv://silvaiberson3:iberson123@cluster0.j8pegzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const uri = 'mongodb+srv://carlosflores:mongodbcf@cluster0.ksfszfd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 const mongoose = require('mongoose');
 mongoose.connect(uri);
