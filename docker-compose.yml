@@ -1,0 +1,30 @@
+services:
+  autentificacion_api:
+    build:
+      context: ./autentificacion_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: autentificacion_api
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+
+  venta_api:
+    build:
+      context: ./venta_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: venta_api
+    restart: unless-stopped
+    ports:
+      - "81:8080"
+      
+  segventa_api:
+    build:
+      context: ./segventa_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: segventa_api
+    restart: unless-stopped
+    ports:
+      - "82:8080"
