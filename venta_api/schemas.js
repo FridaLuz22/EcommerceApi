@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const ventaSchema = new mongoose.Schema({
+  idVenta:{
+    type: String,
+    required: true
+  },
   idProducto: {
     type: String,
     required: true
@@ -19,6 +23,10 @@ const ventaSchema = new mongoose.Schema({
   total: {
     type: Number,
     required: false
+  },
+  status:{
+    type: String,
+    required: true
   },
   createdAt: {
     type: Date,

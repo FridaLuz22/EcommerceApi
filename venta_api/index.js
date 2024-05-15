@@ -25,13 +25,13 @@ app.get('/venta/:username', async(req, res)=>{
 });
 app.post('/venta', async(req, res)=>{
   try {
-    const {idProducto, username, cantidad, precio} = req.body;
+    const {idVenta, idProducto, username, cantidad, precio, status} = req.body;
 
     let userVenta=null;
     userVenta = await personService.get(username);
     if(! userVenta )  throw ("USERNAME NO REGISTRADO");
 
-    const venta = new ventaModel({ idProducto, username, cantidad, precio});
+    const venta = new ventaModel({ idVenta, idProducto, username, cantidad, precio, status});
     const data = await venta.save();
     return res.status(201).json(data);
   } catch (error) {

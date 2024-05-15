@@ -19,9 +19,9 @@ services:
     ports:
       - "81:8080"
       
-  segventa_api:
+  seguimiento_api:
     build:
-      context: ./segventa_api
+      context: ./seguimiento_api
       dockerfile: Dockerfile
     #image: nodejs
     container_name: segventa_api
